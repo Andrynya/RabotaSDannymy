@@ -18,7 +18,7 @@ parsed_data = []
 for lampa in lampy:
     try:
         name = lampa.find_element(By.CSS_SELECTOR, "span[itemprop='name']").text
-        price = lampa.find_element(By.CSS_SELECTOR, 'meta[itemprop="price"]').text
+        price = lampa.find_element(By.CSS_SELECTOR, 'meta[itemprop="price"]').get_attribute('content')
         link = lampa.find_element(By.CSS_SELECTOR, 'link[itemprop="url"]').get_attribute('href')
     except:
         print(f"Произошла ошибка")
